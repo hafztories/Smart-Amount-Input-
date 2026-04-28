@@ -453,11 +453,118 @@ body::after {
 
 /* ========== Responsive ========== */
 @media (max-width: 420px) {
+  body {
+    align-items: stretch;
+    overflow: hidden;
+  }
+
   .phone {
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* dynamic viewport height — accounts for mobile browser chrome */
     border-radius: 0;
     border: none;
     box-shadow: none;
+    overflow: hidden;
+  }
+
+  /* Tighten the top section */
+  .status-bar {
+    padding: 8px 20px 4px;
+  }
+
+  .header {
+    padding: 6px 12px 8px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .profile-name {
+    font-size: 14px;
+  }
+
+  .profile-upi {
+    font-size: 11px;
+  }
+
+  .verified-badge {
+    padding: 4px 12px;
+    font-size: 10px;
+  }
+
+  /* Amount section — don't let it grow unboundedly */
+  .amount-section {
+    flex: 0 1 auto;
+    min-height: 90px;
+    padding: 10px 16px;
+  }
+
+  .amount-value {
+    font-size: 42px;
+  }
+
+  .currency {
+    font-size: 24px;
+  }
+
+  .cursor-blink {
+    height: 32px;
+  }
+
+  .expression-preview {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  /* Note */
+  .note-section {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Keypad — smaller keys so pay button always fits */
+  .keypad-container {
+    padding: 6px 10px 12px;
+    margin-top: auto;
+  }
+
+  .keypad {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .key {
+    height: 46px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+
+  /* Pay button always visible */
+  .pay-btn {
+    height: 50px;
+    font-size: 15px;
+    border-radius: 14px;
   }
 }
+
+/* Extra small screens (iPhone SE, Galaxy A-series) */
+@media (max-width: 380px) {
+  .key {
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .pay-btn {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .amount-value {
+    font-size: 36px;
+  }
+}
+
