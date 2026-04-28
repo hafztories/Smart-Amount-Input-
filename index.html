@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>UPI Smart Amount Input</title>
+  <meta name="description" content="Smart calculator-style amount input for UPI payments with expression evaluation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Success Overlay -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-content">
+      <div class="success-checkmark">
+        <svg viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="25" fill="none" stroke="#4ade80" stroke-width="2"/>
+          <path fill="none" stroke="#4ade80" stroke-width="3" d="M14 27l7 7 16-16"/>
+        </svg>
+      </div>
+      <div class="success-amount" id="successAmount">₹0</div>
+      <div class="success-text">Payment Successful</div>
+      <div class="success-to">Sent to <strong>Rahul Store</strong></div>
+      <button class="success-done" id="successDone">Done</button>
+    </div>
+  </div>
+
+  <div class="phone" id="phone">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>11:57</span>
+      <div class="status-icons">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <button class="back-btn" id="backBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <div class="profile">
+        <div class="avatar" id="avatar">
+          <span>R</span>
+        </div>
+        <div class="profile-info">
+          <div class="profile-name">Rahul Store</div>
+          <div class="profile-upi">rahul@okaxis</div>
+        </div>
+      </div>
+      <button class="menu-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+      </button>
+    </div>
+
+    <!-- Verified Badge -->
+    <div class="verified-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#4ade80"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      <span>UPI ID Verified</span>
+    </div>
+
+    <!-- Amount Display -->
+    <div class="amount-section">
+      <div class="currency-wrapper">
+        <span class="currency">₹</span>
+        <span class="amount-value" id="amountValue">0</span>
+        <div class="cursor-blink" id="cursorBlink"></div>
+      </div>
+      <div class="expression-preview" id="expressionPreview"></div>
+    </div>
+
+    <!-- Note -->
+    <div class="note-section" id="noteSection">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      <span>Add a note</span>
+    </div>
+
+    <!-- Keypad -->
+    <div class="keypad-container">
+      <div class="keypad" id="keypad"></div>
+      <button class="pay-btn" id="payBtn" disabled>
+        <span class="pay-text">Enter Amount</span>
+        <div class="pay-shimmer"></div>
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
