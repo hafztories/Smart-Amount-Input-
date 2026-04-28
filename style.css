@@ -146,13 +146,11 @@ body::after {
 
 /* ========== Amount Section ========== */
 .amount-section {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  min-height: 140px;
+  padding: 24px 20px 16px;
 }
 .currency-wrapper {
   display: flex;
@@ -236,6 +234,7 @@ body::after {
 
 /* ========== Keypad ========== */
 .keypad-container {
+  margin-top: auto; /* always anchors to bottom regardless of screen height */
   padding: 8px 14px 20px;
   background: linear-gradient(180deg, transparent, rgba(0,0,0,0.2));
 }
@@ -461,81 +460,37 @@ body::after {
   .phone {
     width: 100vw;
     height: 100vh;
-    height: 100dvh; /* dynamic viewport height — accounts for mobile browser chrome */
+    height: 100dvh;
     border-radius: 0;
     border: none;
     box-shadow: none;
     overflow: hidden;
   }
 
-  /* Tighten the top section */
-  .status-bar {
-    padding: 8px 20px 4px;
-  }
+  .status-bar { padding: 8px 20px 2px; }
 
-  .header {
-    padding: 6px 12px 8px;
-  }
+  .header { padding: 4px 12px 6px; }
 
-  .avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 15px;
-  }
+  .avatar { width: 36px; height: 36px; font-size: 15px; }
 
-  .profile-name {
-    font-size: 14px;
-  }
+  .profile-name { font-size: 14px; }
+  .profile-upi  { font-size: 11px; }
 
-  .profile-upi {
-    font-size: 11px;
-  }
+  .verified-badge { padding: 4px 12px; font-size: 10px; }
 
-  .verified-badge {
-    padding: 4px 12px;
-    font-size: 10px;
-  }
+  .amount-section { padding: 12px 16px 8px; }
 
-  /* Amount section — don't let it grow unboundedly */
-  .amount-section {
-    flex: 0 1 auto;
-    min-height: 90px;
-    padding: 10px 16px;
-  }
+  .amount-value { font-size: 42px; }
+  .currency     { font-size: 24px; }
+  .cursor-blink { height: 32px; }
 
-  .amount-value {
-    font-size: 42px;
-  }
+  .expression-preview { font-size: 12px; margin-top: 4px; }
 
-  .currency {
-    font-size: 24px;
-  }
+  .note-section { padding: 6px; font-size: 12px; }
 
-  .cursor-blink {
-    height: 32px;
-  }
+  .keypad-container { padding: 6px 10px 16px; }
 
-  .expression-preview {
-    font-size: 12px;
-    margin-top: 6px;
-  }
-
-  /* Note */
-  .note-section {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  /* Keypad — smaller keys so pay button always fits */
-  .keypad-container {
-    padding: 6px 10px 12px;
-    margin-top: auto;
-  }
-
-  .keypad {
-    gap: 6px;
-    margin-bottom: 8px;
-  }
+  .keypad { gap: 6px; margin-bottom: 8px; }
 
   .key {
     height: 46px;
@@ -543,7 +498,6 @@ body::after {
     border-radius: 12px;
   }
 
-  /* Pay button always visible */
   .pay-btn {
     height: 50px;
     font-size: 15px;
@@ -551,20 +505,11 @@ body::after {
   }
 }
 
-/* Extra small screens (iPhone SE, Galaxy A-series) */
-@media (max-width: 380px) {
-  .key {
-    height: 42px;
-    font-size: 16px;
-  }
-
-  .pay-btn {
-    height: 46px;
-    font-size: 14px;
-  }
-
-  .amount-value {
-    font-size: 36px;
-  }
+/* Extra small phones (iPhone SE, 375px and below) */
+@media (max-width: 375px) {
+  .key    { height: 42px; font-size: 16px; }
+  .pay-btn { height: 46px; font-size: 14px; }
+  .amount-value { font-size: 36px; }
+  .keypad-container { padding: 4px 8px 12px; }
 }
 
